@@ -88,7 +88,7 @@ export default function RegisterEmployee({ trigger }) {
       <DialogTrigger asChild>{trigger}</DialogTrigger>
       
       <DialogContent className="sm:max-w-165 p-0 overflow-hidden bg-white rounded-xl [&>button]:hidden">
-        <div className="p-10 h-[70vh] overflow-y-auto custom-scrollbar">
+        <div className="p-10 h-[70vh] md:h-full overflow-y-auto custom-scrollbar">
           
           {/* WRAP EVERYTHING IN A FORM TO ENABLE VALIDATION */}
           <form onSubmit={handleSave}>

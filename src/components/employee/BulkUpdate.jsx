@@ -1,0 +1,68 @@
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose, // 1. Import DialogClose
+} from "@/components/ui/dialog";
+
+export default function BulkUpdate({ trigger }) {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>{trigger}</DialogTrigger>
+      
+      {/* 2. Added [&>button]:hidden to hide the default top-right X icon */}
+      <DialogContent className="sm:max-w-137 p-8 bg-white rounded-xl [&>button]:hidden">
+        <DialogHeader className="mb-6">
+          <DialogTitle className="text-center text-2xl font-normal text-gray-700">
+            Bulk Update
+          </DialogTitle>
+        </DialogHeader>
+
+        <div className="space-y-6">
+          {/* File Input Mockup */}
+          <div className="flex w-full items-center border border-gray-200 rounded-md overflow-hidden bg-white">
+             <input 
+                type="text" 
+                placeholder="Bulk Update" 
+                className="flex-1 px-4 py-3 text-gray-500 outline-none placeholder:text-gray-300"
+             />
+             <div className="bg-gray-200 text-gray-500 px-6 py-3 cursor-pointer hover:bg-gray-300 transition">
+                Browser
+             </div>
+          </div>
+
+          {/* Note Section */}
+          <div className="text-center">
+            <p className="text-md text-gray-800">
+              <span className="font-bold">Note:</span> Upload File Only In xlsx Formate.{" "}
+              <a href="#" className="text-primary hover:underline font-medium">
+                Download
+              </a>{" "}
+              From Here
+            </p>
+          </div>
+
+          {/* Footer Buttons */}
+          <div className="flex gap-4 mt-4">
+            {/* 3. Wrapped Cancel Button in DialogClose to make it close the modal */}
+            <DialogClose asChild>
+              <Button 
+                className="flex-1 bg-[#F1F5F9] text-primary hover:bg-gray-200 py-6 font-normal cursor-pointer"
+                variant="ghost"
+              >
+                Cancel
+              </Button>
+            </DialogClose>
+
+            <Button className="flex-1 bg-primary hover:bg-[#13607e] text-white py-6 font-normal cursor-pointer">
+              Add
+            </Button>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
