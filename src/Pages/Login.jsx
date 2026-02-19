@@ -46,7 +46,7 @@ const Login = () => {
   return (
     <div className="flex flex-col gap-15 justify-center item-center md:flex-row h-screen font-sans">
       {/* LEFT SIDE */}
-      <div className="md:flex flex-col justify-center items-center ml-5 text-white md:bg-primary">
+      <div className="md:flex flex-col justify-center items-center ml-5 text-white">
           <img src={Sparkz} alt="logo"  className="md:mr-45 h-15 mb-4"/>
           <p className="text-xl md:text-2xl text-secondary mr-25 mt-2 font-poppins text-wrap w-80">
             Welcome, we are glad to see you again!

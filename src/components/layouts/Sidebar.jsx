@@ -34,14 +34,13 @@ export default function Sidebar({ collapsed, setCollapsed }) {
 
       <aside
         className={`fixed left-0 top-0 h-full bg-[#1a1f37] text-gray-400 transition-all duration-300 z-50 
-        ${collapsed ? "-translate-x-full md:translate-x-0 md:w-16" : "translate-x-0 w-64"}
+        ${collapsed ? "-translate-x-full md:translate-x-0 md:w-16" : "translate-x-0 w-66"}
         `}
       >
         {/* Logo Area */}
         <div className="h-16 flex items-center justify-between px-6 font-bold text-lg text-white mb-4">
           <div className="flex items-center">
             <img src={Sparkz} alt="logo" className="h-8 w-auto mr-2" />
-            {/* Show Text only if NOT collapsed on Desktop, or ALWAYS on mobile when open */}
           </div>
           
           {/* Mobile Close Button */}
