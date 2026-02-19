@@ -1,19 +1,27 @@
 import React from "react";
 import MainLayout from "../components/layouts/MainLayout";
-import EmployeeFilter from "../components/employee/EmployeeFilters";
-import EmployeeTable from "../components/employee/EmployeeTable";
+import WorkFilter from "../components/work/WorkFilter";
+import WorkTable from "../components/work/WorkTable";
 
 const Dashboard = () => {
   return (
     <MainLayout>
-      <div className="flex items-center justify-center m-5 ">
-        <h1 className="text-xl text-primary">work Center</h1>
-      </div>
-       <EmployeeFilter></EmployeeFilter>
-       <div className="mt-5">
-         <EmployeeTable></EmployeeTable>
-       </div>
+      <div className="px-2 md:px-6 py-4 w-full mx-auto">
+        
+        {/* Page Title - Left Aligned */}
+        <div className="mb-6">
+          <h1 className="text-xl font-medium text-[#187498]">Work Centre</h1>
+        </div>
+        
+        {/* Filters Section */}
+        <WorkFilter />
+        
+        {/* Table Section */}
+        <div className="mt-4">
+          <WorkTable />
+        </div>
 
+      </div>
     </MainLayout>
   );
 };

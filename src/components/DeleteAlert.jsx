@@ -3,7 +3,7 @@ import {
   AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
-  AlertDialogDescription, // Added this back
+  AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
@@ -19,13 +19,13 @@ export default function DeleteAlert({ trigger, onConfirm }) {
         {trigger}
       </AlertDialogTrigger>
       
-      {/* Increased width to match Figma */}
-      <AlertDialogContent className="px-8 py-5 bg-white rounded-xl shadow-lg">
+      {/* Made fully responsive with w-[90vw] for ultra-small screens */}
+      <AlertDialogContent className="w-[90vw] sm:max-w-125 px-6 py-6 sm:px-8 bg-white rounded-xl shadow-lg">
         <AlertDialogHeader className="flex flex-col items-center gap-4">
           
-          {/* Icon Circle - Light red background with red icon */}
-          <div className="flex h-16 w-16 md:ml-48 items-center justify-center rounded-full bg-red text-[#FF5B5B]">
-            <LuTriangleAlert size={45} />
+          {/* Icon Circle - Centered properly (removed md:ml-48), fixed background color */}
+          <div className="flex h-15 w-15 md:ml-48 items-center justify-center rounded-full bg-[#FFECEC] text-[#FF5B5B]">
+            <LuTriangleAlert size={42} />
           </div>
           
           <div className="text-center space-y-2 w-full">
@@ -41,33 +41,32 @@ export default function DeleteAlert({ trigger, onConfirm }) {
 
              {/* Note Section */}
              <div className="flex flex-col items-center space-y-1 mt-5">
-                {/* Note Heading in Primary Teal Color */}
-                <h3 className="text-primary text-lg">
+                <h3 className="text-primary text-lg font-medium">
                    Note:
                 </h3>
-                {/* Warning Paragraph */}
-                <p className="text-secondary text-center text-sm leading-relaxed font-poppins">
+                <p className="text-gray-500 text-center text-sm leading-relaxed font-poppins">
                    The data of the employee will get deleted.<br/>
-                   This action Cannot be undone
+                   This action cannot be undone.
                 </p>
              </div>
           </div>
 
         </AlertDialogHeader>
 
-        <AlertDialogFooter className="sm:justify-center gap-4 mt-8 w-full flex-row">
-          {/* Cancel Button - Primary Teal Background */}
-          <AlertDialogCancel className="px-13 md:px-20 py-6 sm:w-auto cursor-pointer bg-primary text-white hover:bg-teal-800 hover:text-white">
+        {/* Footer Buttons - Using w-1/2 to ensure they fit perfectly on all screens */}
+        <AlertDialogFooter className="sm:justify-center gap-3 sm:gap-4 mt-8 w-full flex-row">
+          
+          <AlertDialogCancel className="w-1/2 py-6 m-0 border-none cursor-pointer bg-primary text-white hover:bg-[#13607e]! hover:text-white rounded-lg text-base font-medium">
             Cancel
           </AlertDialogCancel>
           
-          {/* Delete Button - Light Pink Background, Red Text */}
           <AlertDialogAction 
-            className="px-13 md:px-20 py-6 sm:w-auto text-red-500 bg-red hover:bg-red-600! hover:text-white cursor-pointer"
+            className="w-1/2 py-6 m-0 cursor-pointer text-red-500 bg-[#FFECEC]! hover:bg-[#ff0000]! hover:text-white border-none rounded-lg text-base font-medium shadow-none"
             onClick={onConfirm}
           >
             Delete
           </AlertDialogAction>
+
         </AlertDialogFooter>
 
       </AlertDialogContent>

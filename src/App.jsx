@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
+import Profile from "./Pages/Profile";
 import EmployeeDetails from "./Pages/EmployeeDetails";
 import RolesPermission from "./Pages/RolesPermission";
 import TeamManagement from "./Pages/TeamManagement";
@@ -20,6 +21,15 @@ function App() {
           element={
             <PrivateRoute>
               <Dashboard />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
             </PrivateRoute>
           }
         />
